@@ -41,7 +41,7 @@ urlRouter.get("/:shortID", async (req, res) => {
   }
 });
 
-urlRouter.post("/create",   async (req, res) => {
+urlRouter.post("/create", auth,  async (req, res) => {
   const { OriginalUrl: urlFromReqBody } = req.body;
   if (urlFromReqBody) {
     try {
